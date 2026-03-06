@@ -100,3 +100,20 @@ void setup() {
 }
 
 
+
+//------------------------------------------------------------------------------------------------------
+// Bucle
+//------------------------------------------------------------------------------------------------------
+void loop() {
+  // El semáforo 1 avanza, el resto espera en rojo
+  secuenciaSemaforo(GRUPO1);
+  
+  // El semáforo 2 avanza, el resto espera en rojo
+  secuenciaSemaforo(GRUPO2);
+  
+  // El semáforo 3 avanza...
+  secuenciaSemaforo(GRUPO3);
+  
+  // El semáforo 4 avanza...
+  secuenciaSemaforo(GRUPO4);
+}
