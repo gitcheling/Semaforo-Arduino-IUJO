@@ -84,3 +84,19 @@ void secuenciaSemaforo(int base) {
   leds[base + AZUL].apagar();
 }
 
+
+
+//------------------------------------------------------------------------------------------------------
+// Configuración de leds
+//------------------------------------------------------------------------------------------------------
+void setup() {
+  // Configuramos todos los leds en una sola línea
+  for(int i = 0; i < TOTAL_LEDS; i++) {
+    leds[i].configurar();
+    
+    // Empezar con todos los ROJOS encendidos 
+    if (i % 4 == 0) leds[i].encender();
+  }
+}
+
+
