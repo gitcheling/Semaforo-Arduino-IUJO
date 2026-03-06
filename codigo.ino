@@ -58,3 +58,29 @@ const int AZUL     = 3;
 
 // Constantes para que el código sea legible
 const int TOTAL_LEDS = 16;
+
+
+//------------------------------------------------------------------------------------------------------
+// Función para manejar el semáforo
+//------------------------------------------------------------------------------------------------------
+void secuenciaSemaforo(int base) {
+  // 1. Verde encendido (y el resto del grupo apagado)
+  leds[base + VERDE].encender();
+  leds[base + ROJO].apagar();
+  delay(3000);
+  
+  // 2. Cambiar Verde por Amarillo
+  leds[base + VERDE].apagar();
+  leds[base + AMARILLO].encender();
+  delay(3000);
+  
+  // 3. Cambiar Amarillo por Rojo y Azul
+  leds[base + AMARILLO].apagar();
+  leds[base + ROJO].encender();
+  leds[base + AZUL].encender();
+  delay(3000);
+  
+  // 4. Apagar Azul (el rojo se queda prendido para el siguiente turno)
+  leds[base + AZUL].apagar();
+}
+
